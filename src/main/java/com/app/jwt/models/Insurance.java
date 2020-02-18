@@ -26,7 +26,7 @@ public class Insurance extends PanacheEntity {
     public Supplier supplier;
 
     @JsonIgnoreProperties("insurance")
-    @OneToMany(mappedBy = "insurance", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "insurance", fetch = FetchType.EAGER)
     public List<VehicleInsurance> vehicleInsurances;
 
 }

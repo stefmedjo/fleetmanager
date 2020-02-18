@@ -31,14 +31,14 @@ public class UserResource {
     Optional<JsonString> username;
     
     @GET
-    @RolesAllowed({ TokenUtils.ROLE_ADMIN })
+    //@RolesAllowed({ TokenUtils.ROLE_ADMIN })
     public Response list(){
         return Response.ok(User.findAll().list()).build();
     }
 
     @GET
     @Path("{id}")
-    @RolesAllowed({ TokenUtils.ROLE_USER })
+    //@RolesAllowed({ TokenUtils.ROLE_USER })
     public Response read(@PathParam("id") Long id){
         return Response.ok(User.findById(id)).build();
     }
