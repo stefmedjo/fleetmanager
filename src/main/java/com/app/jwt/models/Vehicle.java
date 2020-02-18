@@ -45,23 +45,27 @@ public class Vehicle extends PanacheEntity {
     @JsonIgnoreProperties("vehicles")
     public User drivedBy;
 
+    @ManyToOne
+    @JsonIgnoreProperties("vehicles")
+    public Category category;
+
     @JsonIgnoreProperties("vehicle")
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     public List<Work> works;
 
     @JsonIgnoreProperties("vehicle")
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     public List<Measurement> measurements;
 
     @JsonIgnoreProperties("vehicle")
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     public List<VehicleInsurance> insurances;
 
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("vehicle")
     public List<Image> images;
 
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("vehicle")
     public List<Plate> plates;
 }

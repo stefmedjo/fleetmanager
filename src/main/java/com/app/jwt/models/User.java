@@ -37,11 +37,11 @@ public class User extends PanacheEntity{
 
     public String post;
 
-    @OneToMany(mappedBy = "assignedTo", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "assignedTo", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("assignedTo")
     public List<Vehicle> assignedVehicles;
 
-    @OneToMany(mappedBy="drivedBy", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="drivedBy", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("drivedBy")
     public List<Vehicle> drivedVehicles;
 

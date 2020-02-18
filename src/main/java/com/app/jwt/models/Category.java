@@ -13,16 +13,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
-public class Brand extends PanacheEntity{
+public class Category extends PanacheEntity {
 
     @NotBlank
-    @Column(unique = true)
+    @Column(nullable = false)
     public String code;
 
     @NotBlank
-    public String designation;
+    public String name;
 
-    @OneToMany(mappedBy = "brand", fetch = FetchType.EAGER)
-    @JsonIgnoreProperties("brand")
-    public List<Model> models;
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("category")
+    public List<Vehicle> vehicles;
 }

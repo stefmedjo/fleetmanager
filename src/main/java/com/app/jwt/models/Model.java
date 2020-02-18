@@ -27,7 +27,7 @@ public class Model extends PanacheEntity {
     @JsonIgnoreProperties("models")
     public Brand brand;
 
-    @OneToMany(mappedBy = "model", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "model", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("model")
     public List<Vehicle> vehicles;
     

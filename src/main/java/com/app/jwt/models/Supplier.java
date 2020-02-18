@@ -26,7 +26,7 @@ public class Supplier extends PanacheEntity {
 
     public String address;
 
-    @OneToMany(mappedBy = "supplier", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "supplier", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("supplier")
     public List<Insurance> insurances;
 
