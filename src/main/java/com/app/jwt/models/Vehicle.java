@@ -25,6 +25,10 @@ public class Vehicle extends PanacheEntity {
 
     public String description;
     
+    public String color;
+
+    public String plate;
+
     public int builtOn;
 
     public LocalDate purchasedOn;
@@ -56,4 +60,8 @@ public class Vehicle extends PanacheEntity {
     @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
     @JsonIgnoreProperties("vehicle")
     public List<Image> images;
+
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("vehicle")
+    public List<Plate> plates;
 }
