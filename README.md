@@ -13,6 +13,4 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
-## Usage
-
 
